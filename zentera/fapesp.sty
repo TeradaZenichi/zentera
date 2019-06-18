@@ -1,0 +1,86 @@
+%Author:        Lucas Zenichi Terada
+%Institution:   University of Campinas
+%Description:   Custom style for zentera template
+
+\NeedsTeXFormat{LaTeX2e}
+%---------------------------------------------------------------------
+%                required packages
+%---------------------------------------------------------------------
+\RequirePackage{ifthen}     %Package to create conditional variables
+\RequirePackage{fancybox}   %Package to create customizable boxs
+\RequirePackage{multirow}
+\RequirePackage{tcolorboxIC_final (Copy)}
+\RequirePackage{xcolor}
+
+%-------------------------------------------------
+%                required packages
+%-------------------------------------------------
+%-------------------------------------------------
+%                package options
+%-------------------------------------------------
+\RequirePackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,    % false: boxed links; true: colored links
+    linkcolor=black,    % color of internal links (change box color with linkbordercolor)
+    citecolor=magenta,  % color of links to bibliography
+    filecolor=black,    % color of file links
+    urlcolor=blue       % color of external links
+}
+
+%-------------------------------------------------
+%                style definition
+%-------------------------------------------------
+\makeatletter
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\institution}[1]{\def\@institution{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
+
+
+\newcommand{\makecover}{%custom makecover
+
+ \begin{titlepage}
+ \begin{figure}[H]
+    \begin{minipage}{.5\linewidth}
+        \flushleft
+        \includegraphics[width=.94in, height=1in,
+            keepaspectratio=true]{IMG/logo_unicamp.jpg}
+    \end{minipage}%
+    \begin{minipage}{.5\linewidth}
+        \flushright
+        \includegraphics[width=.94in, height=1in,
+            keepaspectratio=true]{IMG/logo_feec.png}
+    \end{minipage} 
+\end{figure}
+    \begin{center}
+        \large{\@institution}\\
+        \large{\@department}
+    \end{center}
+    \vspace*{4.8cm}
+    \begin{center}
+        {\sc \Large  \@title}
+    \end{center}
+    \vspace*{3.25cm}
+    
+    \begin{minipage}{7cm}
+        \small
+        \rule{6.9cm}{0.2mm} \hfill 
+    \end{minipage}
+    
+    Aluno/Bolsista: \@author
+    
+    \vspace*{1.25cm}
+    
+    \begin{minipage}{7cm}
+        \small
+        \rule{6.9cm}{0.2mm} \hfill 
+    \end{minipage}
+    
+    Orientador: \@supervisor
+    \null \vfill
+    \begin{center}
+        \@date
+    \end{center}
+\end{titlepage}}
+
+\makeatother
