@@ -8,13 +8,26 @@
 %---------------------------------------------------------------------
 \RequirePackage{ifthen}     %Package to create conditional variables
 \RequirePackage{fancybox}   %Package to create customizable boxs
-\RequirePackage{multirow}
-\RequirePackage{tcolorboxIC_final (Copy)}
-\RequirePackage{xcolor}
+\RequirePackage{multirow}   %Package to create multiple rows
+\RequirePackage{tcolorbox}  %Package to create colored box
+\RequirePackage{xcolor}     %Package to use different colors
+\RequirePackage{amsfonts}   %Package to use math fonts
+\RequirePackage{siunitx}    %Package to use SI
+\RequirePackage{listings}   %Package to display program code
+\RequirePackage{verbatim}   %Package to use verbatim environment
+\RequirePackage{pdfpages}   %Package to add pdf
+\RequirePackage{fancyhdr}   %Package provides extensive facilities, both for constructing headers and footers
+\RequirePackage{float}      %Package to place images
+\RequirePackage[left=3.00cm, right=2.00cm, top=3.00cm, bottom=2.00cm]{geometry}
+\RequirePackage{indentfirst}        %Package to indent all paragraph
+\RequirePackage[brazilian]{babel}
+\RequirePackage{float}      %Package to insert [H] parameters in images
+\RequirePackage{graphicx}   %Package to insert images
+\RequirePackage{amsmath}    %Package to use math expressions
+\RequirePackage{url}        %Package to use links in text 
+\setlength{\parindent}{1cm} %Set paragraph indent size 
+\linespread{1.5}            %Set linespace
 
-%-------------------------------------------------
-%                required packages
-%-------------------------------------------------
 %-------------------------------------------------
 %                package options
 %-------------------------------------------------
@@ -35,6 +48,8 @@
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand{\institution}[1]{\def\@institution{#1}}
 \newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\city}[1]{\def\@city{#1}}
+\newcommand{\resume}[1]{\def\@resume{#1}}
 
 
 \newcommand{\makecover}{%custom makecover
@@ -82,5 +97,53 @@
         \@date
     \end{center}
 \end{titlepage}}
+
+\newcommand{\makecoversheet}{%
+
+\begin{center}
+{\large \@institution
+
+\@department}
+\end{center}
+
+\vspace*{1.0cm}
+\begin{center}
+\large \@author 
+\end{center}
+
+    
+\vspace*{1.3cm}
+    
+\begin{center}
+    {\sc \@title}
+\end{center}
+    
+\vspace*{0.5cm}
+
+    
+\vspace*{1.0cm}
+    
+\begin{flushright}
+\begin{minipage}{11.0cm}
+\@resume
+    
+\vspace*{0.5cm}
+    
+\vspace*{1.0cm}
+Orientador: \@supervisor
+    
+\end{minipage}
+\end{flushright}
+    
+    
+\null \vfill
+\begin{center}
+    Campinas\\ \@date
+\end{center}
+\thispagestyle{empty}
+\clearpage
+
+}
+
 
 \makeatother

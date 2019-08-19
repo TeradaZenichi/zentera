@@ -18,25 +18,18 @@
 %-------------------------------------------------------------------------------
 %                Define booleans
 %-------------------------------------------------------------------------------
-\newboolean{ABNT}
-\newboolean{FAPESP}
-\setboolean{ABNT}{false}
-\setboolean{FAPESP}{false}
+\newboolean{fapesp}
+\setboolean{fapesp}{false}
 %-------------------------------------------------------------------------------
 %                package options
 %-------------------------------------------------------------------------------
-\DeclareOption{ABNT}{\setboolean{ABNT}{true}}
-\DeclareOption{FAPESP}{\setboolean{FAPESP}{true}}
+\DeclareOption{fapesp}{\setboolean{fapesp}{true}}
 \ProcessOptions\relax% Process package options
 %-------------------------------------------------------------------------------
 %                style definition
 %-------------------------------------------------------------------------------
 
-\ifthenelse{\boolean{ABNT}}{
-    \input{abnt.sty}
-}{%Else do nothing
-}
-\ifthenelse{\boolean{FAPESP}}{
+\ifthenelse{\boolean{fapesp}}{
     \input{fapesp.sty}
 }{}
 
