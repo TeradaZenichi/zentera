@@ -19,11 +19,14 @@
 %                Define booleans
 %-------------------------------------------------------------------------------
 \newboolean{fapesp}
+\newboolean{report}
 \setboolean{fapesp}{false}
+\setboolean{report}{false}
 %-------------------------------------------------------------------------------
 %                package options
 %-------------------------------------------------------------------------------
 \DeclareOption{fapesp}{\setboolean{fapesp}{true}}
+\DeclareOption{report}{\setboolean{report}{true}}
 \ProcessOptions\relax% Process package options
 %-------------------------------------------------------------------------------
 %                style definition
@@ -31,6 +34,9 @@
 
 \ifthenelse{\boolean{fapesp}}{
     \input{fapesp.sty}
+}{}
+\ifthenelse{\boolean{report}}{
+    \input{report.sty}
 }{}
 
 

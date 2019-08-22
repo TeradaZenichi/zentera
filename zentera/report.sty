@@ -1,0 +1,91 @@
+%Author:        Lucas Zenichi Terada
+%Institution:   University of Campinas
+%Description:   File that loads the necessary packages for a monograph in the format ABNT
+%               Some packages are commented out to make the class file lighter. 
+%               Uncomment it if you want to use specific functions
+
+%-------------------------------------------------------------------------------
+%                identification
+%-------------------------------------------------------------------------------
+\NeedsTeXFormat{LaTeX2e}
+
+%-------------------------------------------------------------------------------
+%                required packages
+%-------------------------------------------------------------------------------
+\RequirePackage{ifthen}     %Package to create conditional variables
+\RequirePackage{fancybox}   %Package to create customizable boxs
+\RequirePackage{multirow}   %Package to create multiple rows
+\RequirePackage{tcolorbox}  %Package to create colored box
+\RequirePackage{xcolor}     %Package to use different colors
+\RequirePackage{amsfonts}   %Package to use math fonts
+\RequirePackage{siunitx}    %Package to use SI
+\RequirePackage{listings}   %Package to display program code
+\RequirePackage{verbatim}   %Package to use verbatim environment
+\RequirePackage{pdfpages}   %Package to add pdf
+\RequirePackage{fancyhdr}   %Package provides extensive facilities, both for constructing headers and footers
+\RequirePackage{float}      %Package to place images
+\RequirePackage[left=3.00cm, right=2.00cm, top=3.00cm, bottom=2.00cm]{geometry}
+\RequirePackage{indentfirst}        %Package to indent all paragraph
+\RequirePackage[brazilian]{babel}
+\RequirePackage{float}      %Package to insert [H] parameters in images
+\RequirePackage{graphicx}   %Package to insert images
+\RequirePackage{amsmath}    %Package to use math expressions
+\RequirePackage{url}        %Package to use links in text 
+\setlength{\parindent}{1cm} %Set paragraph indent size 
+\linespread{1.5}            %Set linespace
+
+%-------------------------------------------------
+%                package options
+%-------------------------------------------------
+\RequirePackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,    % false: boxed links; true: colored links
+    linkcolor=black,    % color of internal links (change box color with linkbordercolor)
+    citecolor=magenta,  % color of links to bibliography
+    filecolor=black,    % color of file links
+    urlcolor=blue       % color of external links
+}
+
+
+%-------------------------------------------------------------------------------
+%                style definition
+%-------------------------------------------------------------------------------
+
+\makeatletter
+\newcommand{\institution}[1]{\def\@institution{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\subject}[1]{\def\@subject{#1}}
+\renewcommand\and{\\ \indent}
+\pagestyle{fancy}
+\fancyhead[R]{\@subject}
+\fancyhead[L]{\@title}
+\fancyfoot[L]{\@department}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\@institution}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\setlength{\headheight}{14pt}
+
+
+\newcommand{\makeheader}{
+    \begin{flushleft}
+    \includegraphics[height=2.5cm]{zentera/img/logo_unicamp.jpg}
+    \end{flushleft}
+    \vspace{-2.8cm} 
+    \hspace{4cm}
+    \parbox{11cm}{{\Large \textbf{\@subject --- \@title}}
+        
+        \textbf{Professor:} \@supervisor
+    
+        \@author}
+    
+    \vspace{1cm}
+    {\parindent=0pt \hrulefill} 
+    \vspace{1cm}
+    
+}
+
+ \makeatother
+\endinput
