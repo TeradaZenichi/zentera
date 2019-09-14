@@ -54,22 +54,27 @@
 %-------------------------------------------------------------------------------
 
 \makeatletter
-\newcommand{\institution}[1]{\def\@institution{#1}}
-\newcommand{\department}[1]{\def\@department{#1}}
-\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
-\newcommand{\subject}[1]{\def\@subject{#1}}
+%Renew some commands
 \renewcommand\and{\\ \indent}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+%Definig page style
 \pagestyle{fancy}
 \fancyhead[R]{\@subject}
 \fancyhead[L]{\@title}
 \fancyfoot[L]{\@department}
 \fancyfoot[C]{\thepage}
 \fancyfoot[R]{\@institution}
-\renewcommand{\headrulewidth}{2pt}
-\renewcommand{\footrulewidth}{1pt}
 \setlength{\headheight}{14pt}
 
-
+%Commands creted by the report style
+\newcommand{\institution}[1]{\def\@institution{#1}}
+\newcommand{\department}[1]{\def\@department{#1}}
+\newcommand{\supervisor}[1]{\def\@supervisor{#1}}
+\newcommand{\subject}[1]{\def\@subject{#1}}
+\newcommand{\RA}[1]{\hfill\texttt{RA: #1}}
+\newcommand{\setjulia}{\input{zentera/report/julia-code.tex}}
 \newcommand{\makeheader}{
     \begin{flushleft}
     \includegraphics[height=2.5cm]{zentera/img/logo_unicamp.jpg}
@@ -80,8 +85,9 @@
         
         \textbf{Professor:} \@supervisor
     
-        \@author}
-        
+        \@author
+        }
+    
     \vspace{1cm}
     {\parindent=0pt \hrulefill} 
     \vspace{1cm}
