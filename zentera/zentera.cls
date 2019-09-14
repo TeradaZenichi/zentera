@@ -33,10 +33,10 @@
 %-------------------------------------------------------------------------------
 
 \ifthenelse{\boolean{fapesp}}{
-    \input{fapesp.sty}
+    \input{fapesp/fapesp.sty}
 }{}
 \ifthenelse{\boolean{report}}{
-    \input{report.sty}
+    \input{report/report.sty}
 }{}
 
 
