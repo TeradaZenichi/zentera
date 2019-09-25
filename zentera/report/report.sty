@@ -32,6 +32,7 @@
 \RequirePackage{graphicx}   %Package to insert images
 \RequirePackage{amsmath}    %Package to use math expressions
 \RequirePackage{url}        %Package to use links in text 
+\RequirePackage[section]{placeins} %Package to create float barriers. Used by question and subquestion commands
 \setlength{\parindent}{1cm} %Set paragraph indent size 
 \linespread{1.5}            %Set linespace
 
@@ -92,5 +93,22 @@
     {\parindent=0pt \hrulefill} 
     \vspace{1cm}
 }
+
+\newcounter{question}[section]
+\newcommand{\question}[2][]{%
+\ifthenelse{\equal{#1}{}}%
+{\stepcounter{question}}%
+{\setcounter{question}{#1}}%
+\FloatBarrier\noindent\textbf{\large\thequestion.  #2}%
+\smallskip}
+
+\newcounter{subquestion}[question]
+\newcommand{\subquestion}[2][]{%
+\ifthenelse{\equal{#1}{}}%
+{\stepcounter{subquestion}}%
+{\setcounter{subquestion}{#1}}%
+\FloatBarrier\noindent\textbf{\alph{subquestion})  #2}%
+\smallskip}
+
 \makeatother
 \endinput
