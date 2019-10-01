@@ -96,6 +96,7 @@
 
 \newcounter{question}[section]
 \newcommand{\question}[2][]{%
+\smallskip
 \ifthenelse{\equal{#1}{}}%
 {\stepcounter{question}}%
 {\setcounter{question}{#1}}%
@@ -104,6 +105,7 @@
 
 \newcounter{subquestion}[question]
 \newcommand{\subquestion}[2][]{%
+\smallskip
 \ifthenelse{\equal{#1}{}}%
 {\stepcounter{subquestion}}%
 {\setcounter{subquestion}{#1}}%
