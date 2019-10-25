@@ -1,7 +1,7 @@
 %Author:        Lucas Zenichi Terada
 %Institution:   University of Campinas
 %Description:   File that loads the necessary packages for a monograph in the format ABNT
-%               Some packages are commented out to make the class file lighter. 
+%               Some packages are commented out to make the class file lighter.
 %               Uncomment it if you want to use specific functions
 
 %-------------------------------------------------------------------------------
@@ -31,9 +31,9 @@
 \RequirePackage{float}      %Package to insert [H] parameters in images
 \RequirePackage{graphicx}   %Package to insert images
 \RequirePackage{amsmath}    %Package to use math expressions
-\RequirePackage{url}        %Package to use links in text 
+\RequirePackage{url}        %Package to use links in text
 \RequirePackage[section]{placeins} %Package to create float barriers. Used by question and subquestion commands
-\setlength{\parindent}{1cm} %Set paragraph indent size 
+\setlength{\parindent}{1cm} %Set paragraph indent size
 \linespread{1.5}            %Set linespace
 
 %-------------------------------------------------
@@ -81,17 +81,17 @@
     \begin{flushleft}
     \includegraphics[height=2.5cm]{zentera/img/logo_unicamp.jpg}
     \end{flushleft}
-    \vspace{-2.8cm} 
+    \vspace{-2.8cm}
     \hspace{4cm}
     \parbox{11cm}{{\Large \textbf{\@subject\ --- \@title}}
-        
+
         \textbf{Professor:} \@supervisor
-    
+
         \@author
         }
-    
+
     \vspace{1cm}
-    {\parindent=0pt \hrulefill} 
+    {\parindent=0pt \hrulefill}
 }
 
 \newcounter{question}[section]
