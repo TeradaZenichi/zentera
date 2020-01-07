@@ -1,9 +1,19 @@
 Classe Zentera
 ===================================
-A classe zentera é uma classe em latex que contêm suporte para criação de relatórios acadêmicos, com o objetivo de facilitar a criação de relatórios utilizando diversos comandos criados nesta classe.
+A classe zentera é um conjunto de estilos para criação de documentos em latex que contêm suporte para criação de relatórios acadêmicos.
 
-### Criando um relatório com a classe zentera
-Clone este repositório em sua máquina ou no overleaf. Para a utilização da classe zentera, é necessário que o diretório zentera e o arquivo `latexmkrc` estejam na pasta raiz do seu projeto. Na pasta raiz também é contido o arquivo `main.tex`, que pode ser utilizado como exemplo para a criação do relatório.
+## Instalação
+
+A classe pode ser usada tanto no site overleaf quanto em um computador pessoal que possua o conjunto de pacotes exigidos.
+
+### Overleaf
+
+Para utilizar a classe no overleaf é necessário apenas que se faça uma cópia do projeto disponível em https://www.overleaf.com/read/zxxcyxykncyv em sua pasta pessoal do Overleaf.
+
+### Linux
+
+Clone este repositório em sua máquina. Para a utilização da classe zentera, é necessário que o diretório zentera e o arquivo `latexmkrc` estejam na pasta raiz do seu projeto. Na pasta raiz também é contido o arquivo `main.tex`, que pode ser utilizado como exemplo para a criação do relatório.
+
 
 A seguir é feito algumas explicações dos comandos utilizados no arquivo de exemplo  `main.tex` :
 ```tex 
