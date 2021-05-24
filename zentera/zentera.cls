@@ -9,35 +9,50 @@
 %-------------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{zentera}
-\LoadClass{article}
+% \LoadClass{article}
 %-------------------------------------------------------------------------------
 %                required packages
 %-------------------------------------------------------------------------------
 \RequirePackage{ifthen}
-\usepackage[utf8]{inputenc}
+
 %-------------------------------------------------------------------------------
 %                Define booleans
 %-------------------------------------------------------------------------------
 \newboolean{fapesp}
 \newboolean{report}
+\newboolean{guide}
 \setboolean{fapesp}{false}
 \setboolean{report}{false}
+\setboolean{guide}{false}
+
 %-------------------------------------------------------------------------------
 %                package options
 %-------------------------------------------------------------------------------
 \DeclareOption{fapesp}{\setboolean{fapesp}{true}}
 \DeclareOption{report}{\setboolean{report}{true}}
+\DeclareOption{guide}{\setboolean{guide}{true}}
 \ProcessOptions\relax% Process package options
 %-------------------------------------------------------------------------------
 %                style definition
 %-------------------------------------------------------------------------------
 
 \ifthenelse{\boolean{fapesp}}{
+    \usepackage[utf8]{inputenc}
+    \LoadClass{article}
     \input{fapesp/fapesp.sty}
+
 }{}
 \ifthenelse{\boolean{report}}{
+    \usepackage[utf8]{inputenc}
+    \LoadClass{article}
     \input{report/report.sty}
+
 }{}
+\ifthenelse{\boolean{guide}}{
+    \LoadClass[10pt,letterpaper]{article}
+    \input{guide/guide.sty}
+}{}
+
 
 
 \endinput

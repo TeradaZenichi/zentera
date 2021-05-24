@@ -1,16 +1,50 @@
-\documentclass[report]{zentera}
+\documentclass[guide]{zentera}
 
-\department{Departamento}
-\institution{UNICAMP}
-\title{Relatório 1}
-\supervisor{}
-\subject{AA000 A}
-\author{Nome1 \RA{XXXXXX} \and Nome2 \RA{XXXXXX} \and Nome3 \RA{XXXXXX}}
-\setjulia
+
+%-------------------------------------------------
+%                watermark
+%-------------------------------------------------
+
+% \usepackage{academicons}
+% \usepackage{draftwatermark,afterpage,xcolor}
+% \definecolor{olgreen}{HTML}{4f9c45}
+% \SetWatermarkText{Versão Inicial}
+% \SetWatermarkFontSize{0.1\paperheight}
+% \SetWatermarkAngle{45}
+% \SetWatermarkColor[HTML]{EDF5EC}
+% %\SetWatermarkLightness{0.95}
+% \SetWatermarkHorCenter{0.5\paperwidth}
+
 
 
 \begin{document}
+\footnotesize
+%-------------------------------------------------
+%                Title
+%-------------------------------------------------
 
-\makeheader
+\begin{center}
+  {\huge\sffamily\bfseries A quick guide to} \huge\bfseries \LaTeX \\
+\end{center}
 
+%-------------------------------------------------
+%                watermark
+%-------------------------------------------------
+
+\begin{multicols}{3}
+
+\section{What is {\rmfamily \LaTeX}?}
+
+Texto
+
+\section{Mathematics}
+
+\subsection{Math vs. text vs. functions}
+
+Texto
+
+\end{multicols}
+
+%\SetWatermarkHorCenter{0.65\paperwidth}
 \end{document}
+
